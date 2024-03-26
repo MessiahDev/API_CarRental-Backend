@@ -31,6 +31,7 @@ namespace API_CarRental.Models
         public decimal Salary { get; set; } // Salário do vendedor
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime HireDate { get; set; } // Data de contratação do vendedor
 
         [Required]

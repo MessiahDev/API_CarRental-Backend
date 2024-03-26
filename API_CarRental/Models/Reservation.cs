@@ -17,6 +17,7 @@ namespace API_CarRental.Models
         public DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "A data de fim da reserva é obrigatória.")]
+        [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
 
         public decimal TotalPrice { get; set; }

@@ -22,10 +22,8 @@ namespace API_CarRental.Models
         public int CustomerId { get; set; }
 
         [Required]
-        public DateTime StartDate { get; set; }
-
-        [Required]
-        public DateTime EndDate { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime RegisterDate { get; set; }
 
         [Required]
         public bool IsActive { get; set; }

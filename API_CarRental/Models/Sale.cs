@@ -18,6 +18,7 @@ namespace API_CarRental.Models
         public decimal Amount { get; set; }
 
         [Required(ErrorMessage = "A data da venda é obrigatória.")]
+        [DataType(DataType.Date)]
         public DateTime SaleDate { get; set; }
 
         [Display(Name = "Método de Pagamento")]

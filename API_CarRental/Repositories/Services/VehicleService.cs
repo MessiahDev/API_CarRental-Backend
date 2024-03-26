@@ -1,8 +1,5 @@
-﻿using API_CarRental.Context;
-using API_CarRental.Models;
-using API_CarRental.Repositories.Interfaces;
+﻿using API_CarRental.Repositories.Interfaces;
 using API_CarRental.Repositories.IServices;
-using Microsoft.EntityFrameworkCore;
 
 namespace API_CarRental.Repositories.Services
 {
