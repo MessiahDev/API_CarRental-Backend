@@ -14,6 +14,7 @@ namespace API_CarRental.Models
         public int CustomerId { get; set; }
 
         [Required(ErrorMessage = "A data de início da reserva é obrigatória.")]
+        [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
 
         [Required(ErrorMessage = "A data de fim da reserva é obrigatória.")]

@@ -15,9 +15,11 @@ namespace API_CarRental.Models
         [EmailAddress(ErrorMessage = "O email do cliente deve ser um endereço de email válido.")]
         public string? Email { get; set; }
 
+        [Required(ErrorMessage = "O telefone do cliente é obrigatório.")]
         [Phone(ErrorMessage = "O número de telefone do cliente deve ser válido.")]
         public string? Phone { get; set; }
 
+        [Required(ErrorMessage = "O celular do cliente é obrigatório.")]
         [Phone(ErrorMessage = "O número de celular do cliente deve ser válido.")]
         public string? CellPhone { get; set; }
 

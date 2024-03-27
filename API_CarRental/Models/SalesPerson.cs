@@ -25,17 +25,17 @@ namespace API_CarRental.Models
 
         public string? Address { get; set; }
 
-        public string? Role { get; set; } // Cargo ou função do vendedor
+        public string? Role { get; set; }
 
         [Range(0, double.MaxValue, ErrorMessage = "O salário do vendedor deve ser maior que zero.")]
-        public decimal Salary { get; set; } // Salário do vendedor
+        public decimal Salary { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
-        public DateTime HireDate { get; set; } // Data de contratação do vendedor
+        public DateTime HireDate { get; set; }
 
         [Required]
-        public decimal CommissionRate { get; set; } // Taxa de comissão do vendedor
+        public decimal CommissionRate { get; set; }
 
         public ICollection<Sale>? Sales { get; set; }
     }
