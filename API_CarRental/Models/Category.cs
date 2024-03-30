@@ -13,9 +13,13 @@ namespace API_CarRental.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "O nome da categoria é obrigatório.")]
+        [Required(ErrorMessage = "O nome do grupo da categoria é obrigatório.")]
         [StringLength(50, ErrorMessage = "O nome da categoria deve ter no máximo 50 caracteres.")]
-        public string? Name { get; set; }
+        public string? Group { get; set; }
+
+        [Required(ErrorMessage = "O descrição da categoria é obrigatória.")]
+        [StringLength(100, ErrorMessage = "O nome da categoria deve ter no máximo 100 caracteres.")]
+        public string Description { get; set; }
 
         public ICollection<Vehicle>? Vehicles { get; set; }
     }

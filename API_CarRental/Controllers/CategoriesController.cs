@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using API_CarRental.Models;
 using API_CarRental.Repositories.Interfaces;
+using API_CarRental.Repositories.IServices;
 
 namespace API_CarRental.Controllers
 {
@@ -9,10 +10,12 @@ namespace API_CarRental.Controllers
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryRepository _categorieRepository;
+        private readonly ICategoryService _categoryService;
 
-        public CategoryController(ICategoryRepository categoryRepository)
+        public CategoryController(ICategoryRepository categoryRepository, ICategoryService categoryService)
         {
             _categorieRepository = categoryRepository;
+            _categoryService = categoryService;
         }
 
         [HttpGet]
@@ -20,6 +23,13 @@ namespace API_CarRental.Controllers
         {
             var categories = await _categorieRepository.GetAllAsync();
             return Ok(categories);
+        }
+
+        [HttpGet("CategoriesAndVehicles")]
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategoriesAndVehicles()
+        {
+            var categoriesAndVehicles = await _categoryService.GetCategoriesAndCehiclesAsync();
+            return Ok(categoriesAndVehicles);
         }
 
         [HttpGet("{id}")]

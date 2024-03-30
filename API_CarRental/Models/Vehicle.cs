@@ -7,12 +7,12 @@ namespace API_CarRental.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "O ID do veículo é obrigatório.")]
-        public int VehicleId { get; set; }
-
         [Required(ErrorMessage = "O nome do veículo é obrigatório.")]
         [StringLength(100, ErrorMessage = "Nome do veículo deve ter 100 caracteres no máximo!")]
         public string? Name { get; set; }
+
+        [StringLength(300, ErrorMessage = "A URL da imagem do veículo deve ter 300 caracteres no máximo!")]
+        public string? Image { get; set; }
 
         [Required(ErrorMessage = "O modelo do veículo é obrigatório.")]
         [StringLength(100, ErrorMessage = "Nome do modelo do veículo deve ter 100 caracteres no máximo!")]
@@ -27,9 +27,6 @@ namespace API_CarRental.Models
 
         [Required]
         public bool IsActive { get; set; }
-
-        [StringLength(50)]
-        public string? Status { get; set; }
 
         [Required(ErrorMessage = "O ID da categoria é obrigatório.")]
         public int CategoryId { get; set; }

@@ -1,4 +1,5 @@
-﻿using API_CarRental.Repositories.Interfaces;
+﻿using API_CarRental.Models;
+using API_CarRental.Repositories.Interfaces;
 using API_CarRental.Repositories.IServices;
 
 namespace API_CarRental.Repositories.Services

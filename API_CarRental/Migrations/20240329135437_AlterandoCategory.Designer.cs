@@ -3,6 +3,7 @@ using System;
 using API_CarRental.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_CarRental.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240329135437_AlterandoCategory")]
+    partial class AlterandoCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -216,8 +219,8 @@ namespace API_CarRental.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
-                        .HasMaxLength(300)
-                        .HasColumnType("varchar(300)");
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("tinyint(1)");
@@ -234,6 +237,13 @@ namespace API_CarRental.Migrations
 
                     b.Property<DateTime>("RegisterDate")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<int>("VehicleId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
