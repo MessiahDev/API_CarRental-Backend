@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API_CarRental.Models
 {
@@ -19,7 +20,13 @@ namespace API_CarRental.Models
 
         [Required(ErrorMessage = "O descrição da categoria é obrigatória.")]
         [StringLength(100, ErrorMessage = "O nome da categoria deve ter no máximo 100 caracteres.")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
+
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal Price { get; set; }
+
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal TotalPrice { get; set; }
 
         public ICollection<Vehicle>? Vehicles { get; set; }
     }
