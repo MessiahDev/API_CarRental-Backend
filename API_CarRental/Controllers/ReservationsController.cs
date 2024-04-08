@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using API_CarRental.Models;
 using API_CarRental.Repositories.Interfaces;
+using API_CarRental.Repositories.IServices;
 
 namespace API_CarRental.Controllers
 {
@@ -9,10 +10,12 @@ namespace API_CarRental.Controllers
     public class ReservationController : ControllerBase
     {
         private readonly IReservationRepository _reservationRepository;
+        private readonly IReservationService _reservationService;
 
-        public ReservationController(IReservationRepository reservationRepository)
+        public ReservationController(IReservationRepository reservationRepository, IReservationService reservationService)
         {
             _reservationRepository = reservationRepository;
+            _reservationService = reservationService;
         }
 
         [HttpGet]
@@ -31,6 +34,13 @@ namespace API_CarRental.Controllers
                 return NotFound();
             }
             return reservation;
+        }
+
+        [HttpGet("ReservationsAndCategories")]
+        public async Task<ActionResult<IEnumerable<Reservation>>> GetReservationsAndCategories()
+        {
+            var reservationsAndCategories = await _reservationService.GetReservationsAndCategories();
+            return Ok(reservationsAndCategories);
         }
 
         [HttpPost]

@@ -36,6 +36,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<IReservationRepository, ReservationRepository>();
+builder.Services.AddScoped<IReservationService, ReservationService>();
 builder.Services.AddScoped<ISaleRepository, SaleRepository>();
 builder.Services.AddScoped<ISalesPersonRepository, SalesPersonRepository>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();

@@ -7,8 +7,8 @@ namespace API_CarRental.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "O ID do veículo é obrigatório.")]
-        public int VehicleId { get; set; }
+        [Required(ErrorMessage = "A categoria é obrigatória.")]
+        public Category? Category { get; set; }
 
         [Required(ErrorMessage = "O ID do cliente é obrigatório.")]
         public int CustomerId { get; set; }
